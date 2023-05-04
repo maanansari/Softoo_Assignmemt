@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render store match snap 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "height": 35,
+        "marginStart": 8,
+        "marginTop": 2,
+      }
+    }
+    testID="back-btn"
+  >
+    <Image
+      source={
+        {
+          "testUri": "../../../src/assets/goback.png",
+        }
+      }
+      style={
+        {
+          "height": "100%",
+          "width": "10%",
+        }
+      }
+      testID="go-icon"
+    />
+  </View>
+  <RCTScrollView
+    ListEmptyComponent={[Function]}
+    contentContainerStyle={
+      {
+        "paddingVertical": 20,
+      }
+    }
+    data={[]}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={[]}
+    testID="store-list"
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontSize": 14,
+            }
+          }
+        >
+          No Item in Cart
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

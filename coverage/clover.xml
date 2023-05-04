@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1683170990293" clover="3.2.0">
+  <project timestamp="1683170990293" name="All files">
+    <metrics statements="61" coveredstatements="40" conditionals="14" coveredconditionals="5" methods="34" coveredmethods="16" elements="109" coveredelements="61" complexity="0" loc="61" ncloc="61" packages="7" files="10" classes="10"/>
+    <package name="assets">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="goback.png" path="/Users/tk-lpt-761/tkxel/Reanim/src/assets/goback.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components">
+      <metrics statements="13" coveredstatements="8" conditionals="4" coveredconditionals="3" methods="9" coveredmethods="3"/>
+      <file name="Button.tsx" path="/Users/tk-lpt-761/tkxel/Reanim/src/components/Button.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+      <file name="StoreItem.tsx" path="/Users/tk-lpt-761/tkxel/Reanim/src/components/StoreItem.tsx">
+        <metrics statements="9" coveredstatements="5" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="2"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="constants">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="constants.ts" path="/Users/tk-lpt-761/tkxel/Reanim/src/constants/constants.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="redux">
+      <metrics statements="19" coveredstatements="6" conditionals="8" coveredconditionals="0" methods="10" coveredmethods="1"/>
+      <file name="cartReducer.ts" path="/Users/tk-lpt-761/tkxel/Reanim/src/redux/cartReducer.ts">
+        <metrics statements="15" coveredstatements="2" conditionals="8" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/tk-lpt-761/tkxel/Reanim/src/redux/index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
+      <file name="rootReducer.ts" path="/Users/tk-lpt-761/tkxel/Reanim/src/redux/rootReducer.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="screens.HomeScreen">
+      <metrics statements="17" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="7"/>
+      <file name="index.tsx" path="/Users/tk-lpt-761/tkxel/Reanim/src/screens/HomeScreen/index.tsx">
+        <metrics statements="17" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="7"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="28" count="8" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="48" count="4" type="stmt"/>
+        <line num="49" count="4" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="screens.StoreScreen">
+      <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+      <file name="index.tsx" path="/Users/tk-lpt-761/tkxel/Reanim/src/screens/StoreScreen/index.tsx">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="service">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="app.service.ts" path="/Users/tk-lpt-761/tkxel/Reanim/src/service/app.service.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
