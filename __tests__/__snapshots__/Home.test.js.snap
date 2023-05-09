@@ -27,7 +27,7 @@ exports[`render home screen match snap 1`] = `
         }
       }
     >
-      Loading Data ... 
+      Loading Data ...
     </Text>
     <ActivityIndicator
       size="large"

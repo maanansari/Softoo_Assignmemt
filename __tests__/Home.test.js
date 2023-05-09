@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit';
-import {fireEvent, render, waitFor} from '@testing-library/react-native';
+import {fireEvent, render} from '@testing-library/react-native';
 import {Provider} from 'react-redux';
 import rootReducer from '../src/redux/rootReducer';
 import Home from '../src/screens/HomeScreen';
@@ -26,10 +26,12 @@ const mockFetchUserData = data => {
 const navigation = {
   navigate: jest.fn(),
 };
+
 describe('render home screen', () => {
   let store = configureStore({
     reducer: rootReducer,
   });
+
   let component = (
     <Provider store={store}>
       <Home navigation={navigation} />
@@ -48,7 +50,6 @@ describe('render home screen', () => {
     const listContainer = tree.findByTestId('listContainer');
     expect(listContainer).toBeDefined();
     expect((await listContainer).props.children.props.children).toHaveLength(2);
-    console.log((await listContainer).props);
   });
 
   it('check loader component', async () => {

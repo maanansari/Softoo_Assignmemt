@@ -1,7 +1,15 @@
-import {BASE_URL} from '@env';
+const BASE_URL = 'https://my-json-server.typicode.com/benirvingplt'
+
 export class AppService {
-  public async getProducts(endPoints: string): Promise<any> {
-    const response = await fetch(BASE_URL + endPoints);
-    return await response.json();
+  public async getProducts(endPoint: string): Promise<any> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const url = BASE_URL + endPoint;
+        const response = await fetch(url);
+        resolve(response.json());
+      } catch (error) {
+        reject(error);
+      }
+    });
   }
 }

@@ -40,6 +40,5 @@ describe('render store', () => {
   it('render flatList', async () => {
     const tree = render(component);
     const flatList = await tree.findByTestId('store-list');
-    console.log(flatList.props);
   });
 });

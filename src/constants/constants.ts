@@ -1,1 +1,1 @@
-export const PRODUCT_LIST_END_POINTS = '/products/products';
+export const PRODUCT_LIST_END_POINT = '/products/products';

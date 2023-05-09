@@ -29,11 +29,10 @@ describe('AppService', () => {
     it('should handle errors from API', async () => {
       // Arrange
       const endPoints = '/users/1';
-      const expectedError = new Error('Failed to fetch user data');
-      // Mock the fetch method to throw an error
+      const expectedError = new Error('Something went wrong');
+      // // Mock the fetch method to throw an error
       global.fetch = jest.fn().mockRejectedValue(expectedError);
-
-      // Act and Assert
+      //   // Act and Assert
       await expect(appService.getProducts(endPoints)).rejects.toThrow(expectedError);
     });
   });

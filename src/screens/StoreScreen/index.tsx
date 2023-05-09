@@ -1,16 +1,23 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, Text, View, Pressable} from 'react-native';
+import {FlatList, Image, Pressable, Text, View} from 'react-native';
+import {NavigationParams, NavigationScreenProp} from 'react-navigation';
 import {StoreItems} from '../../components/StoreItem';
-import {CartItem} from '../../model/CartItemModel';
+import {ProductsProps} from '../../model/StoreItemModel';
 import {useReduxSelector} from '../../redux';
+import {styles} from './style';
 
-const Store = (props: any) => {
+export interface StoreScreenProps {
+  navigation: NavigationScreenProp<NavigationParams, any>;
+}
+
+const Store: React.FC<StoreScreenProps> = ({navigation}) => {
   const val = useReduxSelector(sel => sel.cart);
   return (
     <View style={{flex: 1}}>
-      <Pressable testID="back-btn" onPress={() => props.navigation.goBack()} style={styles.iconContainerStyle}>
+      <Pressable testID="back-btn" onPress={() => navigation.goBack()} style={styles.iconContainerStyle}>
         <Image testID="go-icon" source={require('../../assets/goback.png')} style={styles.backIconStyle} />
       </Pressable>
+
       <FlatList
         contentContainerStyle={{paddingVertical: 20}}
         testID="store-list"
@@ -23,31 +30,11 @@ const Store = (props: any) => {
             </View>
           );
         }}
-        keyExtractor={(item: CartItem) => item.id.toString()}
-        renderItem={({item}) => <StoreItems key={item.id} id={item.id} price={item?.price} name={item?.name} img={item?.img} />}
+        renderItem={({item}) => <StoreItems products={item?.products} />}
+        keyExtractor={({products}: ProductsProps) => products?.id?.toString()}
       />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  emptyTextStyle: {
-    color: '#000',
-    fontSize: 14,
-  },
-
-  backIconStyle: {width: '10%', height: '100%'},
-
-  iconContainerStyle: {
-    marginStart: 8,
-    height: 35,
-    marginTop: 2,
-  },
-});
 export default Store;

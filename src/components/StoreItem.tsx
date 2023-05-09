@@ -1,86 +1,48 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
-import {StoreItemsProps} from '../model/StoreItemModel';
-import {decreaseItemQuantity, increaseItemQuantity, removeFromCart} from '../redux/cartReducer';
+import {Image, Text, View} from 'react-native';
+import {useDecrement, useIncrement, useRemove} from '../hooks/useHooks';
 import {useReduxDispatch, useReduxSelector} from '../redux/index';
 import Button from './Button';
+import {style} from './style';
 
-export function StoreItems({id, name, price, img}: StoreItemsProps) {
+export function StoreItems({products}: any) {
+  const {id, name, price, img} = products;
   const dispatch = useReduxDispatch();
   const val = useReduxSelector(sel => sel.cart);
-  const quantity = val.find(item => item.id == id)?.quantity;
+  const quantity = val.find(item => item?.products.id == id)?.products?.quantity || 0;
+
+  const handleIncreaseQuantity = () => {
+    dispatch(useIncrement(products));
+  };
+
+  const handleDecreaseQuantity = () => {
+    dispatch(useDecrement(products));
+  };
+
+  const handleRemoveFromCart = () => {
+    dispatch(useRemove(products));
+  };
 
   return (
     <View style={{flex: 0.5}}>
-      <Image source={{uri: img}} style={style.storeImageStyle} resizeMode={'contain'} />
+      <Image source={{uri: img}} style={style.storeImageStyle} resizeMode="contain" />
       <View style={style.mainContainer}>
         <Text style={style.textContainer} numberOfLines={1}>
           {name}
         </Text>
-        <Text style={{...style.textContainer, ...style.priceTextStyle}}>{'$' + price}</Text>
+        <Text style={[style.textContainer, style.priceTextStyle]}>${price}</Text>
       </View>
-      {quantity == 0 || quantity == undefined ? (
-        <Button title="Add to cart" onPress={() => dispatch(increaseItemQuantity({id, name, price, img}))} />
+      {quantity === 0 || quantity === undefined ? (
+        <Button title="Add to cart" onPress={handleIncreaseQuantity} />
       ) : (
         <View style={style.removeCartContainer}>
           <View style={style.actionLayoutStyle}>
-            <Button title="+" onPress={() => dispatch(increaseItemQuantity({id, name, price, img}))} />
-            <Text style={{fontSize: 16.5, marginHorizontal: 8}}>{`${quantity} in cart`}</Text>
-            <Button title="-" onPress={() => dispatch(decreaseItemQuantity({id, name, price, img}))} />
+            <Button title="+" onPress={handleIncreaseQuantity} />
+            <Text testID="quantityText" style={style.countTextStyle}>{`${quantity} in cart`}</Text>
+            <Button title="-" onPress={handleDecreaseQuantity} />
           </View>
-          <Button
-            title="Remove from cart"
-            onPress={() =>
-              dispatch(
-                removeFromCart({
-                  id,
-                  name,
-                  price,
-                  img,
-                }),
-              )
-            }
-          />
+          <Button title="Remove from cart" onPress={handleRemoveFromCart} />
         </View>
       )}
     </View>
   );
 }
-
-const style = StyleSheet.create({
-  mainContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderRadius: 10,
-    backgroundColor: '#0F52BA',
-    paddingVertical: 2,
-    marginHorizontal: 4,
-    paddingHorizontal: 5,
-    alignItems: 'center',
-  },
-  textContainer: {
-    flex: 0.75,
-    color: '#FFF',
-    fontWeight: '500',
-    fontSize: 17,
-  },
-  priceTextStyle: {
-    fontSize: 15.5,
-    flex: 0.25,
-    textAlign: 'right',
-  },
-  storeImageStyle: {
-    width: 400,
-    height: 400,
-    alignSelf: 'center',
-  },
-  removeCartContainer: {
-    alignSelf: 'center',
-    alignItems: 'center',
-    flex: 1,
-  },
-  actionLayoutStyle: {
-    flexDirection: 'row',
-    alignSelf: 'center',
-    alignItems: 'center',
-  },
-});
